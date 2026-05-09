@@ -20,7 +20,7 @@
             <div class="upper-head-right">
                 <button class="addnew-product" onclick="addnewproduct()" >New</button>
                 <button class="account">K</button>
-                <button class="log-out">Logout</button>
+                <button class="log-out" onclick="window.close()" >Logout</button>
             </div>
         </header>
         <div class="addnew-product-div" id="addnew-product-div-id">
@@ -32,9 +32,9 @@
         </div>
 
         <div class="main-container" id="main-container-id">
-            <div class="product-div" id="BlackDenimShirt">
+            <!--<div class="product-div" id="BlackDenimShirt">
                 <div class="image-div">
-                    <img class="product=image" src="images-icons/shirt.webp" >
+                    <img class="product-image" src="images-icons/shirt.webp" >
                 </div>
                 <div class="details-div">
                     <div class="details-name-price">
@@ -49,7 +49,7 @@
             </div>
             <div class="product-div" id="Bluepant" >
                 <div class="image-div">
-                    <img src="images-icons/pant.webp" >
+                    <img class="product-image"  src="images-icons/pant.webp" >
                 </div>
                 <div class="details-div">
                     <div class="details-name-price">
@@ -62,10 +62,11 @@
                     <h4 class="signal-removed" id="Bluepantaddtocartsignal" style="display:none;">Removed </h4>
                 </div>
             </div>
+        -->
 
         </div>
 
     </div>
-    <script src="script.js"></script>
+    <script type="module" src="script.js"></script>
 </body>
 </html>
