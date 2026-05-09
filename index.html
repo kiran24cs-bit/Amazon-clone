@@ -18,11 +18,53 @@
                 <button class="search"><img src="images-icons/search-button.png"></button>
             </div>
             <div class="upper-head-right">
+                <button class="addnew-product" onclick="addnewproduct()" >New</button>
                 <button class="account">K</button>
-                <button class="log-out">logout</button>
+                <button class="log-out">Logout</button>
             </div>
         </header>
-        
+        <div class="addnew-product-div" id="addnew-product-div-id">
+            <input class="newproduct" id="newproductname" placeholder="Name" >
+            <input class="newproduct" id="newproductprice" type="number" placeholder="Price" >
+            <input class="newproduct" id="newproductimage" placeholder="Image" >
+            <button class="newproductaddbutton" onclick="addnew()">ADD PRODUCT</button>
+            <h4 id="addingstatus" style="display: none;">Adding...</h4>
+        </div>
+
+        <div class="main-container" id="main-container-id">
+            <div class="product-div" id="BlackDenimShirt">
+                <div class="image-div">
+                    <img class="product=image" src="images-icons/shirt.webp" >
+                </div>
+                <div class="details-div">
+                    <div class="details-name-price">
+                        <p class="details-name">Black Denim Shirt</p>
+                        <p class="details-price" id="BlackDenimShirt-price"><strong>$100</strong></p>
+                    </div>
+                </div>
+                <div class="add-remove-cart-div">
+                    <button class="add-to-cart-button" id="BlackDenimShirtaddtocart" onclick="addtocart(this.id)">ADD TO CART</button>
+                    <h4 class="signal-removed" id="BlackDenimShirtaddtocartsignal" style="display:none;">Removed</h4>
+                </div>
+            </div>
+            <div class="product-div" id="Bluepant" >
+                <div class="image-div">
+                    <img src="images-icons/pant.webp" >
+                </div>
+                <div class="details-div">
+                    <div class="details-name-price">
+                        <p class="details-name">Blue pant</p>
+                        <p class="details-price" id="Bluepant-price"><strong>$240</strong></p>
+                    </div>
+                </div>
+                <div class="add-remove-cart-div">
+                    <button class="add-to-cart-button" id="Bluepantaddtocart" onclick="addtocart(this.id)">ADD TO CART</button>
+                    <h4 class="signal-removed" id="Bluepantaddtocartsignal" style="display:none;">Removed </h4>
+                </div>
+            </div>
+
+        </div>
+
     </div>
     <script src="script.js"></script>
 </body>
