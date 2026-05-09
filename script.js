@@ -1,7 +1,20 @@
-import { productslist } from "./data.js";
-/*if(localStorage.getItem("listofobjects")){
+let productslist=[
+    {
+        name:"Blue Pant",
+        price:"50",
+        image:"images-icons/pant.webp",
+        added:0
+    },
+    {
+        name:"Black Shirt",
+        price:"100",
+        image:"images-icons/shirt.webp",
+        added:1
+    }
+];
+if(localStorage.getItem("listofobjects")){
     productslist=JSON.parse(localStorage.getItem("listofobjects"));
-}*/
+}
 for (let product of productslist){
     mainaddingproduct(product.name,product.price,product.image,product.added);
 }
@@ -128,14 +141,14 @@ function addnew(){
     mainaddingproduct(newproductname,newproductprice,newproductimage,0);
     document.getElementById("newproductname").value="";
     document.getElementById("newproductprice").value="";
-    newproductimage=document.getElementById("newproductimage").value="";
+    document.getElementById("newproductimage").value="";
     productslist.push({
         name:newproductname,
         price:newproductprice,
         image:newproductimage,
         added:0
     });
-    //localStorage.setItem("listofobjects",JSON.stringify(productslist));
+    localStorage.setItem("listofobjects",JSON.stringify(productslist));
 }
 function addtocart(productid){
     let cart=document.getElementById(productid);
@@ -147,7 +160,6 @@ function addtocart(productid){
         name=name.replaceAll(" ","");
         if(name==realname){
             tempid=product;
-            console.log(tempid);
             break;
         }
     }
@@ -157,20 +169,19 @@ function addtocart(productid){
     if(cart.innerHTML=="ADD TO CART"){
         cart.innerHTML="ADDED";
         productslist[tempid].added=1;
-        console.log(productslist);
+        localStorage.setItem("listofobjects",JSON.stringify(productslist));
         return;
     }
     else{
         cart.innerHTML="ADD TO CART";
         productslist[tempid].added=0;
-        console.log(productslist);
+        localStorage.setItem("listofobjects",JSON.stringify(productslist));
         document.getElementById(productid+"signal").style.display="inline-block";
         setTimeout(()=>{
             document.getElementById(productid+"signal").style.display="none";
         },2000);
     }
 }
-
 
 
 window.addtocart = addtocart;
