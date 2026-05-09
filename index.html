@@ -24,10 +24,10 @@
             </div>
         </header>
         <div class="addnew-product-div" id="addnew-product-div-id">
-            <input class="newproduct" id="newproductname" placeholder="Name" >
-            <input class="newproduct" id="newproductprice" type="number" placeholder="Price" >
-            <input class="newproduct" id="newproductimage" placeholder="Image" >
-            <button class="newproductaddbutton" onclick="addnew()">ADD PRODUCT</button>
+            <input class="newproduct" id="newproductname" onkeypress="nextfield(event,this.id)" placeholder="Name" >
+            <input class="newproduct" id="newproductprice" onkeypress="nextfield(event,this.id)" type="number" placeholder="Price" >
+            <input class="newproduct" id="newproductimage" onkeypress="nextfield(event,this.id)"  placeholder="Image" >
+            <button class="newproductaddbutton" id="newproductaddbuttonid" onclick="addnew()">ADD PRODUCT</button>
             <h4 id="addingstatus" style="display: none;">Adding...</h4>
         </div>
 
