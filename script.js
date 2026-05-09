@@ -128,7 +128,7 @@ function addnew(){
     mainaddingproduct(newproductname,newproductprice,newproductimage,0);
     document.getElementById("newproductname").value="";
     document.getElementById("newproductprice").value="";
-    newproductimage=document.getElementById("newproductimage").value="";
+    document.getElementById("newproductimage").value="";
     productslist.push({
         name:newproductname,
         price:newproductprice,
