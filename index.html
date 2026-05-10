@@ -19,6 +19,10 @@
             </div>
             <div class="upper-head-right">
                 <button class="addnew-product" onclick="addnewproduct()" >New</button>
+                <div class="cartseperatediv">
+                    <img src="images-icons\cart-image.png" onclick="opencart()">
+                    <button class="cart-button" id="cartquantity" onclick="opencart()">0</button>
+                </div>
                 <button class="account">K</button>
                 <button class="log-out" onclick="window.close()" >Logout</button>
             </div>
@@ -67,6 +71,7 @@
         </div>
 
     </div>
-    <script type="module" src="script.js"></script>
+    <script src="data.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

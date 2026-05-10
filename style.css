@@ -132,6 +132,59 @@ body {
 .addnew-product:active{
     transform: scale(0.98);
 }
+.cartseperatediv{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    background: white;
+    padding: 6px 12px;
+
+    border: 2px solid #d1d5db;
+    border-radius: 12px;
+
+    transition: 0.3s;
+}
+
+.cartseperatediv:hover{
+    border-color: #f7ca00;
+    box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+.cartseperatediv img{
+    width: 28px;
+    height: 28px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cartseperatediv img:hover{
+    transform: scale(1.1);
+}
+.cart-button{
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: #f7ca00;
+    color: white;
+
+    font-size: 14px;
+    font-weight: bold;
+
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.cart-button:hover{
+    transform: scale(1.08);
+}
+
+.cart-button:active{
+    transform: scale(0.95);
+}
 
 .account {
   width: 40px;

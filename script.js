@@ -1,7 +1,4 @@
-import { productslist } from "./data.js";
-/*if(localStorage.getItem("listofobjects")){
-    productslist=JSON.parse(localStorage.getItem("listofobjects"));
-}*/
+document.getElementById("cartquantity").innerHTML=itemsquantity;
 for (let product of productslist){
     mainaddingproduct(product.name,product.price,product.image,product.added);
 }
@@ -126,28 +123,37 @@ function addnew(){
         return;
     }
     mainaddingproduct(newproductname,newproductprice,newproductimage,0);
-    document.getElementById("newproductname").value="";
-    document.getElementById("newproductprice").value="";
-    document.getElementById("newproductimage").value="";
     productslist.push({
         name:newproductname,
         price:newproductprice,
         image:newproductimage,
         added:0
     });
+    localStorage.setItem("listofitems",JSON.stringify(productslist));
+    document.getElementById("newproductname").value="";
+    document.getElementById("newproductprice").value="";
+    document.getElementById("newproductimage").value="";
+    
     //localStorage.setItem("listofobjects",JSON.stringify(productslist));
 }
+
+function opencart(){
+
+}
+
+
+
+
+
 function addtocart(productid){
     let cart=document.getElementById(productid);
     let realname=productid.replace("addtocart","");
     let tempid;
-    console.log(productslist);
     for(let product in productslist ){
         let name=productslist[product].name;
         name=name.replaceAll(" ","");
         if(name==realname){
             tempid=product;
-            console.log(tempid);
             break;
         }
     }
@@ -156,19 +162,22 @@ function addtocart(productid){
     }
     if(cart.innerHTML=="ADD TO CART"){
         cart.innerHTML="ADDED";
+        itemsquantity++;
+        document.getElementById("cartquantity").innerHTML=itemsquantity;
         productslist[tempid].added=1;
-        console.log(productslist);
-        return;
     }
     else{
+        itemsquantity--;
+        document.getElementById("cartquantity").innerHTML=itemsquantity;
         cart.innerHTML="ADD TO CART";
         productslist[tempid].added=0;
-        console.log(productslist);
         document.getElementById(productid+"signal").style.display="inline-block";
         setTimeout(()=>{
             document.getElementById(productid+"signal").style.display="none";
         },2000);
     }
+    localStorage.setItem("itemsquantity",JSON.stringify(itemsquantity));
+    localStorage.setItem("listofitems",JSON.stringify(productslist));
 }
 
 
