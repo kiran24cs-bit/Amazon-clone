@@ -3,6 +3,74 @@ for (let product of productslist){
     mainaddingproduct(product.name,product.price,product.image,product.added);
 }
 
+let users=[
+    {
+        name:"kiran",
+        password:"1",
+        access:0
+    },
+    {
+        name:"1",
+        password:"1",
+        access:1
+    }
+];
+let loggeduser;
+document.getElementById("Main-body-id").style.display="none";
+document.getElementById("siginup-entry-id").style.display="none";
+
+function loadsignuppage(){
+    document.getElementById("login-entry-id").style.display="none";
+    document.getElementById("siginup-entry-id").style.display="flex";
+}
+function loadloginpage(value){
+    if (value==0){
+        document.getElementById("login-entry-id").style.display="flex";
+        document.getElementById("siginup-entry-id").style.display="none";
+        return ;
+    }
+    document.getElementById("yesaccount").innerHTML="Please wait...!";
+    document.getElementById("noaccount").innerHTML="Registered Successfully...";
+    document.getElementById("noaccount").style.color="green";
+    document.getElementById("noaccount").style.fontSize="larger";
+    document.getElementById("loadsignuppage").style.display="none";
+    setTimeout(()=>{
+        document.getElementById("yesaccount").innerHTML="Already have an account ?";
+        document.getElementById("login-entry-id").style.display="flex";
+        document.getElementById("siginup-entry-id").style.display="none";
+    },3000)
+}
+function loadpage(){
+    let username=document.getElementById("usernameinput").value;
+    let password=document.getElementById("passwordinput").value;
+    for(let details of users){
+        if(details.name==username && details.password==password){
+            loggeduser=username[0];
+            let addtocartbutton=document.querySelectorAll(".add-to-cart-button");
+            document.getElementById("accounticon").innerHTML=loggeduser;
+            if(details.access==1){
+                
+                addtocartbutton.forEach((addcartbuttons)=>{
+                    addcartbuttons.style.display="none";
+                });
+                document.getElementById("addbuttonheader").style.display="inline-block";
+                document.getElementById("Main-body-id").style.display="block";
+                document.getElementById("login-entry-id").style.display="none";
+                return ;
+            }
+            else{
+                document.getElementById("addbuttonheader").style.display="none";
+                document.getElementById("Main-body-id").style.display="block";
+                document.getElementById("login-entry-id").style.display="none";
+                addtocartbutton.forEach((addcartbuttons)=>{
+                    addcartbuttons.style.display="inline-block";
+                })
+                return ;
+            }
+        }
+    }
+    document.getElementById("noaccount").innerHTML="Account not found !";
+}
 function mainaddingproduct(newproductname,newproductprice,newproductimage,cartstatus){
     let name=document.createElement("p");
     name.innerHTML=newproductname;
@@ -180,7 +248,13 @@ function addtocart(productid){
     localStorage.setItem("listofitems",JSON.stringify(productslist));
 }
 
+function logoutclose(){
+    document.getElementById("Main-body-id").style.display="none";
+    document.getElementById("login-entry-id").style.display="flex";
+    document.getElementById("siginup-entry-id").style.display="none";
+   document.getElementById("noaccount").innerHTML="Dont have an account ?";
 
+}
 
 window.addtocart = addtocart;
 window.addnewproduct = addnewproduct;

@@ -8,7 +8,40 @@
     <link rel="icon" href="images-icons/amazon-logo.png"></link>
 </head>
 <body>
-    <div class="Main-body">
+    <!--<div class="login-entry" id="login-entry-id">
+        <input id="usernameinput" placeholder="User name">
+        <input id="passwordinput" placeholder="Password">
+        <button id="loginbutton">Login</button>
+        <p id="noaccount">Dont have an account ?</p>
+        <a id="loadsignuppage" onclick="loadsignuppage()">Sign-up</a>
+    </div>
+    <div class="signup" id="siginup-entry-id">
+        <input id="singupusernameinput" placeholder="User name">
+        <input id="singuppasswordinput" placeholder="Password">
+        <button id="signupbutton">Sing-up</button>
+        <p id="yesaccount">Already have an account ?</p>
+        <a id="loadlogininpage" onclick="loadloginpage()">Sign-in</a>
+    </div> -->
+    <div class="login-entry" id="login-entry-id">
+        <input id="usernameinput" placeholder="User name">
+        <input id="passwordinput" placeholder="Password">
+        <button id="loginbutton" onclick="loadpage()" >Login</button>
+        <p id="noaccount">Dont have an account ?</p>
+        <a id="loadsignuppage" onclick="loadsignuppage()">Sign-up</a>
+    </div>
+    <div class="signup" id="siginup-entry-id">
+        <input id="singupusernameinput" placeholder="User name">
+        <input id="singuppasswordinput" placeholder="Password">
+        <button id="signupbutton" onclick="loadloginpage(1)" >Sign-up</button>
+        <p id="yesaccount">Already have an account ?</p>
+        <a id="loadlogininpage" onclick="loadloginpage(0)">Sign-in</a>
+    </div> 
+
+
+
+
+
+    <div class="Main-body" id="Main-body-id">
         <header class="upper-head">
             <div class="upper-head-left">
                 <img class="amazon-image" src="images-icons/amazon-image.png">
@@ -18,13 +51,13 @@
                 <button class="search"><img src="images-icons/search-button.png"></button>
             </div>
             <div class="upper-head-right">
-                <button class="addnew-product" onclick="addnewproduct()" >New</button>
+                <button class="addnew-product" id="addbuttonheader" onclick="addnewproduct()" >New</button>
                 <div class="cartseperatediv">
                     <img src="images-icons\cart-image.png" onclick="opencart()">
                     <button class="cart-button" id="cartquantity" onclick="opencart()">0</button>
                 </div>
-                <button class="account">K</button>
-                <button class="log-out" onclick="window.close()" >Logout</button>
+                <button class="account" id="accounticon" >K</button>
+                <button class="log-out" onclick="logoutclose()" >Logout</button>
             </div>
         </header>
         <div class="addnew-product-div" id="addnew-product-div-id">

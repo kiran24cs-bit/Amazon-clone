@@ -5,11 +5,145 @@
 }
 
 body {
-    height: 100vh;
-    overflow: hidden;
+    
   font-family: Arial, Helvetica, sans-serif;
   background-color: #eaeded;
 }
+.login-entry{
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 35px;
+    background-color: white;
+    border-radius: 14px;
+    box-shadow: 0px 4px 18px rgba(0,0,0,0.15);
+    margin: 80px auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.login-entry input{
+    padding: 13px;
+    border: 1px solid rgb(180,180,180);
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.login-entry input:focus{
+    border-color: rgb(255, 153, 0);
+    box-shadow: 0px 0px 5px rgba(255,153,0,0.5);
+}
+
+#loginbutton{
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(255, 216, 20);
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#loginbutton:hover{
+    background-color: rgb(245, 205, 3);
+}
+
+#loginbutton:active{
+    transform: scale(0.98);
+}
+
+#noaccount{
+    margin: 5px 0px 0px 0px;
+    text-align: center;
+    color: rgb(90,90,90);
+    font-size: 14px;
+}
+
+#loadsignuppage{
+    text-align: center;
+    color: rgb(0,113,133);
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+#loadsignuppage:hover{
+    color: rgb(196, 85, 0);
+    text-decoration: underline;
+}
+.signup{
+    width: 340px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 35px;
+    background-color: white;
+    border-radius: 14px;
+    box-shadow: 0px 4px 18px rgba(0,0,0,0.15);
+    margin: 80px auto;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.signup input{
+    padding: 13px;
+    border: 1px solid rgb(180,180,180);
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+    transition: 0.2s;
+}
+
+.signup input:focus{
+    border-color: rgb(255, 153, 0);
+    box-shadow: 0px 0px 5px rgba(255,153,0,0.5);
+}
+
+#signupbutton{
+    padding: 13px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(255, 216, 20);
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#signupbutton:hover{
+    background-color: rgb(245, 205, 3);
+}
+
+#signupbutton:active{
+    transform: scale(0.98);
+}
+
+#yesaccount{
+    margin: 5px 0px 0px 0px;
+    text-align: center;
+    color: rgb(90,90,90);
+    font-size: 14px;
+}
+
+#loadlogininpage{
+    text-align: center;
+    color: rgb(0,113,133);
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: 0.2s;
+}
+
+#loadlogininpage:hover{
+    color: rgb(196, 85, 0);
+    text-decoration: underline;
+}
+
 
 .upper-head {
   display: grid;
