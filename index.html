@@ -23,15 +23,15 @@
         <a id="loadlogininpage" onclick="loadloginpage()">Sign-in</a>
     </div> -->
     <div class="login-entry" id="login-entry-id">
-        <input id="usernameinput" placeholder="User name">
-        <input id="passwordinput" placeholder="Password">
+        <input id="usernameinput" onkeypress="nextfield(event,this.id)" placeholder="User name">
+        <input id="passwordinput" onkeypress="nextfield(event,this.id)" placeholder="Password">
         <button id="loginbutton" onclick="loadpage()" >Login</button>
         <p id="noaccount">Dont have an account ?</p>
         <a id="loadsignuppage" onclick="loadsignuppage()">Sign-up</a>
     </div>
     <div class="signup" id="siginup-entry-id">
-        <input id="singupusernameinput" placeholder="User name">
-        <input id="singuppasswordinput" placeholder="Password">
+        <input id="singupusernameinput" onkeypress="nextfield(event,this.id)" placeholder="User name">
+        <input id="singuppasswordinput" onkeypress="nextfield(event,this.id)" placeholder="Password">
         <button id="signupbutton" onclick="loadloginpage(1)" >Sign-up</button>
         <p id="yesaccount">Already have an account ?</p>
         <a id="loadlogininpage" onclick="loadloginpage(0)">Sign-in</a>

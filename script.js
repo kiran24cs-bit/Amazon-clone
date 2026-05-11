@@ -1,20 +1,10 @@
+document.getElementById("usernameinput").focus();
 document.getElementById("cartquantity").innerHTML=itemsquantity;
 for (let product of productslist){
     mainaddingproduct(product.name,product.price,product.image,product.added);
 }
 
-let users=[
-    {
-        name:"kiran",
-        password:"1",
-        access:0
-    },
-    {
-        name:"1",
-        password:"1",
-        access:1
-    }
-];
+
 let loggeduser;
 document.getElementById("Main-body-id").style.display="none";
 document.getElementById("siginup-entry-id").style.display="none";
@@ -22,13 +12,31 @@ document.getElementById("siginup-entry-id").style.display="none";
 function loadsignuppage(){
     document.getElementById("login-entry-id").style.display="none";
     document.getElementById("siginup-entry-id").style.display="flex";
+    document.getElementById("singupusernameinput").focus();
 }
 function loadloginpage(value){
+    document.getElementById("usernameinput").focus();
     if (value==0){
+        
         document.getElementById("login-entry-id").style.display="flex";
         document.getElementById("siginup-entry-id").style.display="none";
+        document.querySelector("input").focus();
         return ;
     }
+    let newname=document.getElementById("singupusernameinput").value;
+    let newpassword=document.getElementById("singuppasswordinput").value;
+    if(!newname || !newpassword){
+        document.getElementById("yesaccount").innerHTML="Enter all details";
+        return;
+    }
+    users.push(
+        {
+            name:newname,
+            password:newpassword,
+            access:0
+        }
+    );
+    localStorage.setItem("usersdata",JSON.stringify(users));
     document.getElementById("yesaccount").innerHTML="Please wait...!";
     document.getElementById("noaccount").innerHTML="Registered Successfully...";
     document.getElementById("noaccount").style.color="green";
@@ -164,6 +172,18 @@ function addnewproduct(){
     document.getElementById("main-container-id").style.display="none";
     document.getElementById("newproductname").focus();
 }
+/*
+let fields=["newproductname","newproductprice","usernameinput","singupusernameinput"];
+let buttons=["newproductimage","newproductaddbuttonid","passwordinput","loginbutton","singuppasswordinput","signupbutton"];
+
+function nextfield(event,buttonid){
+    if(event.key=="Enter"){
+        fields.forEach((field)=>{
+
+        });
+    }
+}
+*/
 function nextfield(event,buttonid){
     if(event.key=="Enter"){
         if(buttonid=="newproductname"){
@@ -172,9 +192,22 @@ function nextfield(event,buttonid){
         else if(buttonid=="newproductprice"){
             document.getElementById("newproductimage").focus();
         }
-        else{
+        else if (buttonid=="newproductimage"){
             document.getElementById("newproductaddbuttonid").click();
         }
+        else if(buttonid=="usernameinput"){
+            document.getElementById("passwordinput").focus();
+        }
+        else if (buttonid=="passwordinput"){
+            document.getElementById("loginbutton").click();
+        }
+        else if(buttonid=="singupusernameinput"){
+            document.getElementById("singuppasswordinput").focus();
+        }
+        else if (buttonid=="singuppasswordinput"){
+            document.getElementById("signupbutton").click();
+        }
+
     }
 }
 

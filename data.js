@@ -2,6 +2,26 @@ let productslist;
 
 let cartitems;
 let itemsquantity;
+
+let users;
+if(localStorage.getItem("usersdata")){
+    users=JSON.parse(localStorage.getItem("usersdata"));
+}
+else{
+    users=[
+    {
+        name:"kiran",
+        password:"1",
+        access:0
+    },
+    {
+        name:"1",
+        password:"1",
+        access:1
+    }
+];
+}
+
 if(localStorage.getItem("itemsquantity")){
     itemsquantity=JSON.parse(localStorage.getItem("itemsquantity"));
 }
